@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="icon" href="icons/DAMA_BIGGER_LOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div>
+                <a href="/">
+                    <img src="icons/DAMA_LOGO.png" style="width: 40px; height: auto; margin-top: 5px;" alt="">
+                </a>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <ul class="nav-menu">
+                <li><button onclick="changeTab('inicio')" class="active" data-tab="inicio">Início</button></li>
+                <li><button onclick="changeTab('sobre')" data-tab="sobre">Sobre Nós</button></li>
+                <li><button onclick="changeTab('gestao')" data-tab="gestao">Gestões</button></li>
+                <li><button onclick="changeTab('comunidades')" data-tab="comunidades">Comunidades</button></li>
+                <li><button onclick="changeTab('links')" data-tab="links">Links & Arquivos</button></li>
+            </ul>
+
+            <div style="display: flex; align-items: center;">
+                <!-- Botão Modo Escuro -->
+                <button class="dark-mode-btn" onclick="toggleDarkMode()" id="darkModeBtn"> <img src="icons/moon.png" alt="" id="darkModeIcon" style="width: 30px; height: auto;"> </button>
+                
+                <!-- Botão Menu Mobile -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="changeTab('inicio'); toggleMobileMenu();" data-tab-mobile="inicio" class="active">Início</button>
+            <button onclick="changeTab('sobre'); toggleMobileMenu();" data-tab-mobile="sobre">Sobre Nós</button>
+            <button onclick="changeTab('gestao'); toggleMobileMenu();" data-tab-mobile="gestao">Gestões</button>
+            <button onclick="changeTab('comunidades'); toggleMobileMenu();" data-tab-mobile="comunidades">Comunidades</button>
+            <button onclick="changeTab('links'); toggleMobileMenu();" data-tab-mobile="links">Links & Arquivos</button>
+        </div>
+    </nav>
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Página Início -->
+        <div id="inicio" class="content-section active">
+            <a href="naemap" class="news-card">
+                <div class="news-title">Conheça o NAEMAP</div>
+                <div class="news-date">10 de Janeiro, 2026</div>
+            </a>
+            <a href="boas_vindas" class="news-card">
+                <div class="news-title">Bem vindos ao primeiro semestre!</div>
+                <div class="news-date">20 de Janeiro, 2026</div>
+            </a>
+            <br>
+        </div>
+        <!-- Página Sobre Nós -->
+        <div id="sobre" class="content-section">
+            <div class="card">
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">
+                    Sobre Nós
+                </h3>
+                <p style="margin-bottom: 1rem;">
+                    O Diretório Acadêmico da Escola de de Matemática Aplicada (DAMA) é a entidade que representa os estudantes dos cursos de Matemática Aplicada e Ciência de Dados e Inteligência Artificial da Fundação Getulio Vargas.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    Nossa missão é defender os interesses dos estudantes, promover atividades acadêmicas e culturais, e fortalecer a comunidade da EMAp.
+                </p>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                    Nossos Objetivos
+                </h3>
+                <ul>
+                    <li>Representar os estudantes junto à coordenação do curso e à instituição</li>
+                    <li>Organizar eventos acadêmicos, científicos e sociais</li>
+                    <li>Estimular a integração e a colaboração entre os alunos</li>
+                    <li>Apoiar e incentivar iniciativas estudantis</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Contato</h3>
+                <p>dama.emap@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Página Gestão -->
+        <div id="gestao" class="content-section">
+            <h2 class="section-title" style="text-align: center;">CHAPA HC | 2026</h2>
+            <div class="card">
+                <h3 class="section-title" style="font-size: x-large; font-weight: 600;">Presidência</h3>
+                <div class="grid">
+                   <div class="gestao-card">
+                        <div><img class="profile_photo" src="pictures/nina.jpeg" alt="" ></div>
+                        <div class="role">Nina Leão</div>
+                        <div class="name">Presidente</div>
+                    </div>
+                   <div class="gestao-card">
+                        <div><img src="pictures/luis.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Luis Fonseca</div>
+                        <div class="name">Vice-Presidente</div>
+                    </div>
+                </div>
+                <br>
+                <h3 class="section-title" style="font-size: x-large; font-weight: 600;">Membros</h3>
+                <div class="grid">
+                    <div class="gestao-card">
+                        <div><img src="pictures/pedro.jpeg  " alt="" class="profile_photo"></div>
+                        <div class="role">Pedro Lacerda</div>
+                        <div class="name">Diretor Acadêmico</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/boldrini.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Samuel Boldrini</div>
+                        <div class="name">Diretor de Comunicação</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/matue.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Gabriel Lucas</div>
+                        <div class="name">Diretor de Esportes</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/bittencourt.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Gabriel Bittencourt</div>
+                        <div class="name">Diretor de Eventos</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/recruta.png" alt="" class="profile_photo"></div>
+                        <div class="role">Pedro Duailibe</div>
+                        <div class="name">Vice-Diretor de Eventos</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/lisa.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Lisânia Soares</div>
+                        <div class="name">Diretora de Mídia</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/joana.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Joana Fontes</div>
+                        <div class="name">Diretora de Produtos</div>
+                    </div>
+                    <div class="gestao-card">
+                        <div><img src="pictures/spaniol.jpeg" alt="" class="profile_photo"></div>
+                        <div class="role">Nicolas Spaniol</div>
+                        <div class="name">Diretor de Tecnologia</div>
+                    </div>
+                    <div class="gestao-card">
+                        <a href="coelhos_assados"><img class="profile_photo" src="pictures/trajano.jpeg" alt="" ></a>
+                        <div class="role">Pedro Trajano</div>
+                        <div class="name">Tesoureiro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página Comunidades -->
+        <div id="comunidades" class="content-section">
+            <h2 class="section-title">Comunidades</h2>
+            <div class="card">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="https://link.clashroyale.com/invite/clan/en?tag=GL9CPGP8&token=87h3wddj&platform=android" class="link-card">
+                        <h3>Clash Royale Clan</h3>
+                        <p>Clã de Clash Royale da EMAp</p>
+                    </a>
+                    <a href="minecraft" class="link-card">
+                        <h3>Minecraft Server</h3>
+                        <p>Server de Minecraft da EMAp</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página Links -->
+        <div id="links" class="content-section">
+            <h2 class="section-title">Links</h2>
+            <div class="card">
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <a href="https://drive.google.com/drive/folders/14FcabjpRgAH3ICL0gc7Z5bOMMA0dnt1O" class="link-card">
+                        <h3>Acervo EMAp</h3>
+                        <p>Repositório com materiais acadêmicos, documentos e conteúdos de apoio aos estudantes da EMAp</p>
+                    </a>
+                    <a href="https://visualdslab.com/fluxograma-ciencia-de-dados-2024/" class="link-card">
+                        <h3>Fluxograma de CD</h3>
+                        <p>Estrutura curricular completa do curso de graduação em Ciência de Dados</p>
+                    </a>
+                    <a href="https://www.visualdslab.com/fluxograma-matematica-aplicada-2024/" class="link-card">
+                        <h3>Fluxograma de MAp</h3>
+                        <p>Estrutura curricular completa do curso de graduação em Matemática Aplicada</p>
+                    </a>
+                </div>
+            </div>
+            <h2 class="section-title">Arquivos</h2>
+            <div class="card">
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <a href="archives/manual_calouros.pdf" download="MANUAL CALOUROS" class="link-card">
+                        <h3>Manual dos Calouros</h3>
+                        <p>Guia introdutório com informações acadêmicas e institucionais para estudantes ingressantes</p>
+                    </a>
+                    <a href="archives/calendario_academico_26.pdf" download="CALENDÁRIO ACADÊMICO 2026" class="link-card">
+                        <h3>Calendário Acadêmico</h3>
+                        <p>Cronograma oficial com datas importantes do ano letivo e do período acadêmico</p>
+                    </a>
+                    <a href="archives/estatuto_dama.pdf" download="ESTATUTO DAMA" class="link-card">
+                        <h3>Estatuto do DAMA</h3>
+                        <p>Documento que estabelece as normas, objetivos e funcionamento do Diretório Acadêmico</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© DAMA - Diretório Acadêmico da Escola de Matemática Aplicada</p>
+        <p class="small">Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
