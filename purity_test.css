@@ -1,0 +1,233 @@
+:root {
+  --bg: #060810;
+  --surface: #0d1120;
+  --border: #1a2240;
+  --accent: #3b82f6;
+  --accent2: #60a5fa;
+  --text: #dde6f5;
+  --muted: #4a5a7a;
+  --checked-bg: #0a1028;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, #3b82f6, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -2px;
+}
+
+header p {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.score-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(6,8,16,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.score-text {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.score-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 60px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.progress-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1d4ed8, var(--accent2));
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 100%;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--accent);
+  opacity: 0.8;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 4px;
+  position: relative;
+  user-select: none;
+}
+
+.item:hover {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.item.checked {
+  background: var(--checked-bg);
+  border-color: #1a2e5a;
+}
+
+.item.checked .label {
+  color: var(--accent);
+  text-decoration: line-through;
+  text-decoration-color: rgba(59,130,246,0.4);
+}
+
+.item.checked .num {
+  color: var(--accent);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.custom-check {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--muted);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.item.checked .custom-check {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.item.checked .custom-check::after {
+  content: '✓';
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.num {
+  font-size: 0.65rem;
+  color: var(--muted);
+  min-width: 28px;
+  padding-top: 3px;
+  letter-spacing: 1px;
+}
+
+.label {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.item.pop {
+  animation: pop 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .item { padding: 12px 10px; }
+  .label { font-size: 0.82rem; }
+}
+
+.show-wrapper {
+  text-align: center;
+  padding: 48px 0 24px;
+}
+
+.show-btn {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.show-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+
