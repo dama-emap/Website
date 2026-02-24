@@ -27,24 +27,38 @@ function toggleMobileMenu() {
 
 function toggleDarkMode() {
     const body = document.body;
-    const icon = document.getElementById('darkModeIcon'); // Pega a imagem
-    const zapzap = document.getElementById('whatsappButton');
-    const download = document.getElementById('downloadButton');
+    const icon = document.getElementById('darkModeIcon');
+    const zapzap = document.querySelectorAll('.whatsappButton');
+    const download = document.querySelectorAll('.downloadButton');
     
     body.classList.toggle('dark-mode');
     
     if (body.classList.contains('dark-mode')) {
-        icon.src = '/icons/sun.png'; // Troca para imagem do sol
+        icon.src = '/icons/sun.png';
         icon.alt = 'Modo Claro';
-        zapzap.src = '/icons/whatsapp_lighter.png'
-        download.src = '/icons/download_lighter.png'
+
+        zapzap.forEach(el => {
+            el.src = '/icons/whatsapp_lighter.png';
+        });
+
+        download.forEach(el => {
+            el.src = '/icons/download_lighter.png';
+        });
+
         localStorage.setItem('darkMode', 'enabled');
     } else {
-        icon.src = '/icons/moon.png'; // Troca para imagem da lua
+        icon.src = '/icons/moon.png';
         icon.alt = 'Modo Escuro';
+
+        zapzap.forEach(el => {
+            el.src = '/icons/whatsapp.png';
+        });
+
+        download.forEach(el => {
+            el.src = '/icons/download.png';
+        });
+
         localStorage.setItem('darkMode', 'disabled');
-        zapzap.src = '/icons/whatsapp.png'
-        download.src = '/icons/download.png'
     }
 }
 
