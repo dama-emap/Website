@@ -29,6 +29,7 @@ function toggleDarkMode() {
     const body = document.body;
     const icon = document.getElementById('darkModeIcon'); // Pega a imagem
     const zapzap = document.getElementById('whatsappButton');
+    const download = document.getElementById('downloadButton');
     
     body.classList.toggle('dark-mode');
     
@@ -36,12 +37,14 @@ function toggleDarkMode() {
         icon.src = '/icons/sun.png'; // Troca para imagem do sol
         icon.alt = 'Modo Claro';
         zapzap.src = '/icons/whatsapp_lighter.png'
+        download.src = '/icons/download_lighter.png'
         localStorage.setItem('darkMode', 'enabled');
     } else {
         icon.src = '/icons/moon.png'; // Troca para imagem da lua
         icon.alt = 'Modo Escuro';
         localStorage.setItem('darkMode', 'disabled');
         zapzap.src = '/icons/whatsapp.png'
+        download.src = '/icons/download.png'
     }
 }
 
