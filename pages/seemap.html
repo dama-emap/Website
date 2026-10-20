@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Presença SEEMAP</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
-<script src="/pages/purity_test.js"></script>
-<link rel="icon" href="/icons/DAMA_BIGGER_LOGO.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presença SEEMAP</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 47vw;
+            min-height: 212px;
+
+            background-color: #194269;
+            color: #ffffff;
+
+            border-radius: 35px;
+            text-decoration: none;
+
+            font-size: clamp(24px, 3.5vw, 58px);
+            font-weight: 400;
+
+            padding: 30px;
+            text-align: center;
+
+            transition: background-color 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #245580;
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                width: 85vw;
+                min-height: 140px;
+                border-radius: 25px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div style="width: 45%;"></div>
-    <div style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background-color: #3498db;
-">
-        <div style="width: 25%"></div>
-        <a href="https://tally.so/r/Z95x9y" style="text-decoration: none; color: white">Presença SEEMAP</a>
-        <div style="width: 25%"></div>
-    </div>
+
+    <a href="https://tally.so/r/Z95x9y" class="button">
+        Presença SEEMAP
+    </a>
+
 </body>
 </html>
